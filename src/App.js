@@ -11,7 +11,7 @@ const App=()=>{
      const fetchPlaylists = async () => {
     try {
       // Replace localhost:3000 with your lambda endpoint
-      const response = await fetch("http://localhost:3000/lambda?moods=happy,sad");
+      const response = await fetch(`/.netlify/functions/spotify?moods=happy,sad`);
       const data = await response.json();
       console.log("Playlists:", data); // This shows in Inspect Console
     } catch (err) {
