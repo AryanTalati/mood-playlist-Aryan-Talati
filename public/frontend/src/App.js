@@ -6,24 +6,7 @@ import ExampleCard from "./components/ExampleCard";
 const App=()=>{
      const [mood,setMood]=useState("")
 
-     
-
-     const fetchPlaylists = async () => {
-    try {
-      // Replace localhost:3000 with your lambda endpoint
-      const response = await fetch("http://localhost:3000/lambda?moods=happy,sad");
-      const data = await response.json();
-      console.log("Playlists:", data); // This shows in Inspect Console
-    } catch (err) {
-      console.error("Error fetching playlists:", err);
-    }
-  };
-
-  // STEP 3: Trigger it on button or mood select
-  const handleMoodSelect = (selectedMood) => {
-    setMood(selectedMood);
-    fetchPlaylists(); // calls your Lambda
-  };
+     const handleMoodSelect=(selectedMood)=> setMood(selectedMood)
 
 return (
  <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200">
